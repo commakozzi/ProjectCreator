@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using ProjectCreator.Model;
+using System.Data;
+using System.Diagnostics;
 
 namespace ProjectCreator
 {
@@ -21,21 +24,33 @@ namespace ProjectCreator
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
 
         //Define Variables:
         string mProjectNumber;
         string mProjectName;
         string mPath;
+        string mRoot;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            //Set up Directory TreeView:
+            var itemProvider = new ItemProvider();
+            var items = itemProvider.GetItems("H:\\Projects");
+            DataContext = items;
+
+            //Get selected TreeView item to mRoot:
+                   
+        }
 
         private void createProject_button_Click(object sender, RoutedEventArgs e)
         {
-            mProjectNumber = projectName_textbox.Text;
-            mProjectName = projectNumber_textbox.Text;
-            mPath = @"c:\" + mProjectNumber + "." + mProjectName;
+            mProjectNumber = projectNumber_textbox.Text;
+            mProjectName = projectName_textbox.Text;
+            TreeViewItem selectedItem = treeView.SelectedItem as TreeViewItem;
+            mRoot = selectedItem.Header.ToString();
+            mPath = mRoot + mProjectNumber + " " + mProjectName;
 
             try
             {
@@ -54,7 +69,8 @@ namespace ProjectCreator
                 information_label.Content = "The directory creation failed.";
             }
             finally {}
-            
+
+            Process.Start("explorer.exe", mPath);
 
         }
     }

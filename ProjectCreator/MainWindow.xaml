@@ -4,19 +4,38 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectCreator"
+        xmlns:Model="clr-namespace:ProjectCreator.Model"
         mc:Ignorable="d"
         Title="Savant Engineering - ProjectCreator" Height="400" Width="700" WindowStyle="ThreeDBorderWindow">
     <Window.Effect>
         <DropShadowEffect/>
     </Window.Effect>
-    <Grid Background="#FFCCD1D6">
+    <Window.Resources>
+
+        <HierarchicalDataTemplate DataType="{x:Type Model:DirectoryItem}"
+                                  ItemsSource="{Binding Items}">
+            <TextBlock Text="{Binding Path=Name}" ToolTip="{Binding Path=Path}" />
+        </HierarchicalDataTemplate>
+
+        <DataTemplate DataType="{x:Type Model:FileItem}">
+            <TextBlock Text="{Binding Path=Name}" ToolTip="{Binding Path=Path}" />
+        </DataTemplate>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF292946" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <TextBox x:Name="projectNumber_textbox" HorizontalAlignment="Left" Height="23" Margin="10,47,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="216"/>
-        <Label x:Name="projectNumber_label" Content="Enter Project Number:" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="188"/>
+        <Label x:Name="projectNumber_label" Content="Enter Project Number:" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="188" Foreground="#FFEAE7E7" FontFamily="Lato Medium"/>
         <TextBox x:Name="projectName_textbox" HorizontalAlignment="Left" Height="23" Margin="10,107,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="216"/>
-        <Label x:Name="projectName_label" Content="Enter Project Name:" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="188"/>
-        <TreeView x:Name="treeView" Margin="259,10,10,10"/>
-        <Button x:Name="createProject_button" Content="Create Project" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="216" Click="createProject_button_Click"/>
-        <Label x:Name="information_label" Content="" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="216"/>
+        <Label x:Name="projectName_label" Content="Enter Project Name:" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="188" Foreground="#FFEAE7E7" FontFamily="Lato Medium"/>
+        <TreeView x:Name="treeView" Margin="259,10,10,10" ItemsSource="{Binding}" FontFamily="Lato Medium" Background="White"/>
+        <Button x:Name="createProject_button" Content="Create Project" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="216" Click="createProject_button_Click" Height="40" Background="#FFB9B9B9" FontFamily="Lato Medium" FontSize="13"/>
+        <Label x:Name="information_label" Content="" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Width="216" Foreground="White"/>
 
     </Grid>
 </Window>
