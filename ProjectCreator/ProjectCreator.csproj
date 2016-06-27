@@ -52,10 +52,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>45E99822E50138CD196680E171C55AD95DE3AB9A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>F71A9E4342082B6341A9D8FD630EACD8E118B1A4</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ProjectCreator_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ProjectCreator_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -119,6 +119,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ProjectCreator_1_TemporaryKey.pfx" />
     <None Include="ProjectCreator_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

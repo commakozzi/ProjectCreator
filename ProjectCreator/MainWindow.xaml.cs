@@ -37,7 +37,7 @@ namespace ProjectCreator
 
             //Set up Directory TreeView:
             var itemProvider = new ItemProvider();
-            var items = itemProvider.GetItems("H:\\Projects");
+            var items = itemProvider.GetItems("M:\\");
             DataContext = items;
 
             //Get selected TreeView item to mRoot:

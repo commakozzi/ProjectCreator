@@ -29,13 +29,74 @@
                 <GradientStop Color="#FF292946" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBox x:Name="projectNumber_textbox" HorizontalAlignment="Left" Height="23" Margin="10,47,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="216"/>
-        <Label x:Name="projectNumber_label" Content="Enter Project Number:" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="188" Foreground="#FFEAE7E7" FontFamily="Lato Medium"/>
-        <TextBox x:Name="projectName_textbox" HorizontalAlignment="Left" Height="23" Margin="10,107,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="216"/>
-        <Label x:Name="projectName_label" Content="Enter Project Name:" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="188" Foreground="#FFEAE7E7" FontFamily="Lato Medium"/>
-        <TreeView x:Name="treeView" Margin="259,10,10,10" ItemsSource="{Binding}" FontFamily="Lato Medium" Background="White"/>
-        <Button x:Name="createProject_button" Content="Create Project" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="216" Click="createProject_button_Click" Height="40" Background="#FFB9B9B9" FontFamily="Lato Medium" FontSize="13"/>
-        <Label x:Name="information_label" Content="" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Width="216" Foreground="White"/>
+        
+        <TextBox 
+            x:Name="projectNumber_textbox" 
+            HorizontalAlignment="Left" 
+            Height="23" 
+            Margin="10,47,0,0" 
+            TextWrapping="Wrap" 
+            Text="" 
+            VerticalAlignment="Top" 
+            Width="216"/>
+        
+        <Label 
+            x:Name="projectNumber_label" 
+            Content="Enter Project Number:" 
+            HorizontalAlignment="Left" 
+            Margin="10,16,0,0" 
+            VerticalAlignment="Top" 
+            Width="188" 
+            Foreground="#FFEAE7E7" 
+            FontFamily="Lato Medium"/>
+        
+        <TextBox 
+            x:Name="projectName_textbox" 
+            HorizontalAlignment="Left" 
+            Height="23" Margin="10,107,0,0" 
+            TextWrapping="Wrap" 
+            Text="" 
+            VerticalAlignment="Top" 
+            Width="216"/>
+        
+        <Label 
+            x:Name="projectName_label" 
+            Content="Enter Project Name:" 
+            HorizontalAlignment="Left" 
+            Margin="10,76,0,0" 
+            VerticalAlignment="Top" 
+            Width="188" 
+            Foreground="#FFEAE7E7" 
+            FontFamily="Lato Medium"/>
+        
+        <TreeView 
+            x:Name="treeView" 
+            Margin="259,10,10,10" 
+            ItemsSource="{Binding}" 
+            FontFamily="Lato Medium" 
+            Background="White"/>
+        
+        <Button 
+            x:Name="createProject_button" 
+            Content="Create Project" 
+            HorizontalAlignment="Left" 
+            Margin="10,149,0,0" 
+            VerticalAlignment="Top" 
+            Width="216" 
+            Click="createProject_button_Click" 
+            Height="40" 
+            Background="#FFB9B9B9" 
+            FontFamily="Lato Medium" 
+            FontSize="13"/>
+        
+        <Label 
+            x:Name="information_label" 
+            Content="" 
+            HorizontalAlignment="Left" 
+            Margin="10,194,0,0" 
+            VerticalAlignment="Top" 
+            Width="216" 
+            Foreground="White"/>
 
     </Grid>
 </Window>
